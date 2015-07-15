@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Ke Dashboard XNOTE</title>
+<link href="../admin/css/bootstrap.css" rel="stylesheet">
+<link href="../admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="../admin/css/back.css" rel="stylesheet">
+</head>
+<body style="background:whiteSnow;">
+
+<div id="wrapper">
+    
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-xs-11 col-sm-6 col-md-6 col-md-offset-2">
+                
+                <div style="border:1px solid #ddd;padding:30px">
+                    <h2>Login</h2>
+                    <form method="post" class="form" action="/login/auth">
+                        
+                        <div class="form-group">
+                            <input type="text" required="" class="form-control" name="username" placeholder="Username.." />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" required="" class="form-control" name="password" placeholder="Password.." />
+                        </div>
+                        <div class="form-group">
+                            
+                            <button type="submit" class="btn btn-success">
+                            <i class="fa fa-unlock fa-fw"></i> Login
+                            </button>
+                        </div>
+                        <br />
+                        <span style="color:red"> <%= error_login %> </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

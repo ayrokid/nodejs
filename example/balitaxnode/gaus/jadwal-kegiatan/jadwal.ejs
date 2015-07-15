@@ -1,0 +1,98 @@
+<%- include ../../views/header.ejs %>
+
+<div class="page-container">
+<div class="row">
+<div class="col-md-11">
+
+    <div style="border:1px solid #ddd;min-height:60px;padding:12px">
+        
+        <div class="col-md-11">
+            <div class="form-group pull-left">
+                <a style="margin-left:-10px;" href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#modal-jadwal"><i class="fa fa-plus"></i> Add Schedule</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div><!-- /.row -->
+
+
+<div class="row">
+    <div class="col-xs-11 col-sm-6 col-md-11">
+    <div class="header">                            
+        <h3>Jadwal Kegiatan Terbaru</h3>
+    </div>
+    <hr />
+        
+        <div class="table-responsive" style="margin-top:5px">
+            <table class="table table-bordered table-hover" id="datatable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Kegiatan</th>
+                        <th>Tanggal & Waktu Mulai</th>
+                        <th>Tanggal & Waktu Berakhir</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% if(data.length){
+                         var no = 1;
+                         for (var i=0; i < data.length;i++){
+                            %>
+                                <tr>
+                                    <td><%=no++ %></td> 
+                                    <td><%=data[i].nama_kegiatan %></td>
+                                    <td>
+                                        <%=data[i].tanggal_mulai %> <br />
+                                        <%=data[i].jam_mulai %> WIB
+                                    </td>
+                                    <td>
+                                        <%=data[i].tanggal_selesai %> <br /> 
+                                        <%=data[i].jam_selesai %> WIB
+                                    </td>
+                                    <td>
+                                    <%
+                                        if(data[i].status_jadwal == '1'){
+                                            %>
+                                                Acara Penting
+                                            <%
+                                        }
+                                        else if(data[i].status_jadwal == '2'){
+                                            %>
+                                                Acara Mendesak
+                                            <%
+                                        }
+                                        else {
+                                            %>
+                                                Acara Santai
+                                            <%
+                                        }
+                                    %>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="edit-jadwal" data-jadwal="<%=data[i].id%>,<%=data[i].nama_kegiatan%>,<%=data[i].tanggal_mulai%>,<%=data[i].jam_mulai%>,<%=data[i].tanggal_selesai%>,<%=data[i].jam_selesai%>,<%=data[i].status_jadwal%>"><i class="fa fa-pencil"></i> Edit</a> - 
+                                        <a href="javascript:void(0)" onclick="del_jadwal(<%=data[i].id %>)"><i class="fa fa-times"></i> Hapus</a>
+                                    </td>
+                                </tr>
+                            <%
+                         }
+                    }
+                    else {
+                        %>
+                            <tr>
+                                <td colspan="3">Tidak Ada Jadwal Kegiatan</td>
+                            </tr>
+                        <%
+                    } 
+                %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+<%- include modal.ejs %> 
+</div> <!--end of page conatiner-->
+<%- include ../../views/footer.ejs %>

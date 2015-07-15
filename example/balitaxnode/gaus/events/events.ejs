@@ -1,0 +1,96 @@
+<%- include ../../views/header.ejs %>
+
+<div class="page-container">
+<div class="row">
+<div class="col-md-11">
+    <div style="border:1px solid #ddd;min-height:60px;padding:12px">
+        
+        <div class="col-md-11">
+            <div class="form-group pull-left">
+                <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#modal-events"><i class="fa fa-plus"></i> Add New Events</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div><!-- /.row -->
+
+
+<div class="row">
+    <div class="col-xs-11 col-sm-6 col-md-11">
+        <div class="header">                            
+            <h3>Event Event Terbaru</h3>
+        </div>
+        <hr />
+        <div class="table-responsive" style="margin-top:5px">
+            <table class="table table-bordered table-hover" id="datatable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Events</th>
+                        <th>Waktu Mulai</th>
+                        <th>Waktu Berakhir</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% if(data.length){
+                         var no = 1;
+                         for (var i=0; i < data.length;i++){
+                            %>
+                                <tr>
+                                    <td><%=no++ %></td> 
+                                    <td><%=data[i].nama_event %></td>
+                                    <td>
+                                        <%=data[i].tanggal_mulai %> <br />
+                                        <%=data[i].jam_mulai %> WIB
+                                    </td>
+                                    <td>
+                                        <%=data[i].tanggal_selesai %> <br /> 
+                                        <%=data[i].jam_selesai %> WIB
+                                    </td>
+                                    <td>
+                                    <%
+                                        if(data[i].status_event == '1'){
+                                            %>
+                                                Perlu Hadir
+                                            <%
+                                        }
+                                        else if(data[i].status_jadwal == '2'){
+                                            %>
+                                                Usahakan Hadir
+                                            <%
+                                        }
+                                        else {
+                                            %>
+                                                Kehadiran Santai
+                                            <%
+                                        }
+                                    %>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="edit-event" data-event="<%=data[i].id%>,<%=data[i].nama_event%>,<%=data[i].tanggal_mulai%>,<%=data[i].jam_mulai%>,<%=data[i].tanggal_selesai%>,<%=data[i].jam_selesai%>,<%=data[i].status_event%>"><i class="fa fa-pencil"></i> Edit</a> - 
+                                        <a href="javascript:void(0)" onclick="del_event(<%=data[i].id %>)"><i class="fa fa-times"></i> Hapus</a>
+                                    </td>
+                                </tr>
+                            <%
+                         }
+                    }
+                    else {
+                        %>
+                            <tr>
+                                <td colspan="3">Tidak Ada Event Baru</td>
+                            </tr>
+                        <%
+                    } 
+                %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+<%- include modal.ejs %> 
+</div> <!--end of page conatiner-->
+<%- include ../../views/footer.ejs %>

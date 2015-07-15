@@ -1,0 +1,23 @@
+{
+  "name": "crud2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "compression": "^1.5.0",
+    "connect": "^3.4.0",
+    "ejs": "^2.3.2",
+    "errorhandler": "^1.4.0",
+    "express": "^4.13.0",
+    "express-myconnection": "^1.0.4",
+    "method-override": "^2.3.3",
+    "morgan": "^1.6.0",
+    "mysql": "^2.7.0"
+  }
+}

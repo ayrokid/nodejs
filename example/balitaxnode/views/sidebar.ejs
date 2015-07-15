@@ -1,0 +1,52 @@
+
+<!-- Sidebar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a style="color:#FFF" class="navbar-brand" href="/home"><b>BALITAX XNOTE</b></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+            <li class="sidebar-search">
+
+                <a href="#">
+                    <i class="fa fa-renren fa-3x"></i> &nbsp; <span style="font-size:30px">XNOTES</span>
+                </a>
+            </li>
+            <li class="active"><a href="/home"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="/jadwal-kegiatan"><i class="fa fa-tags"></i> Schedule Saya</a></li>
+            <li><a href="/events"><i class="fa fa-tags"></i> Events Saya</a></li>
+           
+        </ul>
+
+        <ul class="nav navbar-top-links navbar-right">
+
+            <li class="dropdown">
+                <a style="color:#fff;font-weight:bold;" class="dropdown-toggle" data-toggle="dropdown" href="#">
+
+                    <i class="fa fa-user fa-fw"></i> <%= sess_user %> <i class="fa fa-caret-down"></i>
+
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="/profil"><i class="fa fa-user fa-fw"></i>Profile</a>
+
+                    <li class="divider"></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+
+    </div><!-- /.navbar-collapse -->
+
+</nav>

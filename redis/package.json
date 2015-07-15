@@ -1,0 +1,17 @@
+{
+  "name": "Redis Apps",
+  "version": "1.0.0",
+  "description": "Redis Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "ejs": "^2.3.2",
+    "express": "^4.13.0",
+    "mysql": "^2.7.0"
+  }
+}

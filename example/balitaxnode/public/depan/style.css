@@ -1,0 +1,117 @@
+html, body, div, span, iframe,
+h1, h2, h3, h4, h5, h6, p,
+abbr, acronym, address,
+em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+border: 0;
+margin: 0;
+outline: 0;
+padding: 0;
+vertical-align: baseline; }
+
+html { height: 100%; }
+
+ol, ul { list-style: none; }
+
+a img,
+th img,
+td img {
+  vertical-align: top;
+}
+
+footer, header, menu, nav, section { display: block; }
+
+body { background-color: #000; background-image: url('img/bg.jpg'); height: 100%; margin: 0; top: 0; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/*-----------------------------------------------------------------------------------*/
+
+.logo {
+	margin: 0 auto;
+	padding-top: 100px;
+	width: 155px;
+	height: 55px;
+}
+
+.logo img {
+	width: 155px;
+	height: 55px;
+}
+
+.content {
+	max-width: 720px;
+	max-height: 378px;
+	height: 378px;
+	margin: 60px auto 0 auto; 
+}
+
+.col3 {
+	float: left;
+	position: relative;
+	max-width: 330px;
+	max-height: 378px;
+	margin: 0 15px;
+}
+
+.imgHover {
+	padding-top: 20px;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	position: relative;
+}
+
+.imgHover:hover {
+	padding-top: 0;
+}
+
+.center1 {
+	margin-left: 85px;
+	position: absolute;
+	top: 250px;
+}
+
+.center2 {
+	margin-left: 115px;
+	position: absolute;
+	top: 250px;
+}
+
+.center3 {
+	margin-left: 97px;
+	position: absolute;
+	top: 250px;
+}
+
+.col3 .button {
+	text-align: center;
+	font: 300 14px 'Lato', sans-serif; color: #aaaaaa;
+}
+
+.col3 .button a {
+	padding: 8px 15px;
+    background-color: transparent;
+    border: 1px solid #aaaaaa;
+    text-decoration: none;
+    -webkit-transition: background .3s ease;
+	-moz-transition: background .3s ease;
+	-o-transition: background .3s ease;
+	transition: background .3s ease;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-o-border-radius: 40px;
+	-mox-border-radius: 40px;
+}
+
+.col3 .button a:hover {
+	background: rgba(255, 255, 255, .2);
+    border-color: #fff;
+    color: #fff;
+}

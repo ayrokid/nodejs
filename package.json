@@ -1,0 +1,21 @@
+{
+  "name": "node-mysql",
+  "version": "1.0.0",
+  "description": "{}",
+  "main": "connect.js",
+  "dependencies": {
+    "express": "^4.13.0",
+    "mongoose": "^4.0.5",
+    "mysql": "^2.5.4",
+    "redis": "^0.12.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "directories": {
+    "example": "example"
+  }
+}
