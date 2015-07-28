@@ -62,6 +62,35 @@ routerAllUser.get(function(req, res, next) {
 });
 
 /**
+ * post data to DB | POST
+ */
+routerAllUser.post(function(req, res, next){
+  //validation
+  req.assert('name', 'Name is Required').notEmpty();
+  req.assert('email', 'A Valid email is required').isEmail();
+  req.assert('password', 'Enter a password 6 - 20').len(6,20);
+
+  var errors = req.validationErrors();
+  if(errors){
+    res.status(422).json(errors);
+    return;
+  }
+
+  //get data
+  var data = {
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  };
+
+  //inserting into mysql
+  userModel.insertUser(data, function(rows){
+    res.json(rows);
+  })
+
+})
+
+/**
  * REGISTER OUR ROUTER
  * --------------------
  */

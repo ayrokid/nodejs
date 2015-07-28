@@ -8,8 +8,8 @@ var UsersModel = module.exports = function(config){
 
 };
 
-UsersModel.prototype.insertUser = function(username, next){
-    var query = connection.query("insert into user (name) VALUES (?)",[username], function(err, rows){
+UsersModel.prototype.insertUser = function(data, next){
+    var query = connection.query("insert into user set ? ",data, function(err, rows){
       var response;
       if(err){
         response = {
