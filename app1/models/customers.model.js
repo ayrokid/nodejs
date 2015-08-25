@@ -1,6 +1,5 @@
 /* MySQL */
-var mysql       = require('mysql');
-var db_config   = require("../config/database.conf.js").database_conf;
+var connection   = require("../config/database.conf.js").database_conf;
 
 /* create connection pooling */
 handleConnection();
@@ -10,11 +9,22 @@ var Customer = module.exports = function(config) {
 
 };
 
-Customer.prototype.getAll = function(call)
+Customer.prototype.getAll = function(callback){
+    var query = connection.query("select * from customers ", function(err, rows, next){
+      var response;
+      if(err){
+          response = {
+              message: err,
+              statusCode: err.code
+          };
+          callback(response);
+      };
+      callback({ statusCode : 200, content_list : rows });
+  });
+};
 
 function handleConnection() {
     console.log("connected db..");
-    connection = mysql.createPool(db_config);
 
     connection.getConnection(function(err) {
         if(err){
