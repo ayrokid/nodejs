@@ -1,0 +1,35 @@
+<% layout('../layout') -%>
+
+<h1>Users</h1>
+<table class="table table-bordered">
+	<caption>Data User</caption>
+	<thead>
+		<tr>
+			<th>No.</th>
+			<th>Nama</th>
+			<th>Alamat Email</th>
+			<th>Aksi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% if(data.length) { %>
+
+		<% for(var i=0; i < data.length; i++)  { %>
+		<tr>
+			<td><%=(i+1) %></td>
+			<td><%=data[i].name %></td>
+			<td><%=data[i].email %></td>
+			<td>
+				<a class="btn btn-primary btn-sm" href="/users/edit/<%=data[i].user_id%>">Edit</a>       
+                <a class="btn btn-danger btn-sm" href="/users/delete/<%=data[i].user_id%>">Delete</a>
+			</td>
+		</tr>
+		<% } %>
+
+		<% }else{ %>
+		<tr>
+			<td colspan="4">data</td>
+		</tr>		
+		<% } %>
+	</tbody>
+</table>
