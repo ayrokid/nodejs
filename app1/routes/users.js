@@ -23,9 +23,17 @@ router.get('/edit/:user_id', function(req, res) {
 			if(err)
 				console.log('Error Selecting : %s', err);
 
-			res.render('pages/userEdit', {title:'Users - Node.js', data:rows});
+			res.render('pages/userEdit', {title:'Edit Users - Node.js', data:rows});
 		});
 	});
+});
+
+router.post('/edit/:user_id', function(req, res) {
+	var user_id =  req.params.user_id;
+
+  	var input = JSON.parse(JSON.stringify(req.body));
+  	// var_dump(input);
+  	res.json(input);
 });
 
 module.exports = router;
