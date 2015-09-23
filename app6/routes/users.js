@@ -34,7 +34,6 @@ router.use(function(req, res, next) {
 	}
 });
 
-
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.json({ message: 'Welcome to the coolest API on earth!' });
