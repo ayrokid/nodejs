@@ -6,11 +6,11 @@ var router 	= express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('berita detik');
 });
 
-router.get('/scrape', function(req, res, next) {
-  url = 'http://www.imdb.com/title/tt1229340/';
+router.get('/bola', function(req, res, next) {
+  url = 'http://detik.feedsportal.com/c/33613/f/656101/index.rss';
 
   request(url, function(error, response, html) {
 
