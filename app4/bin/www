@@ -8,6 +8,9 @@ var app = require('../app');
 var debug = require('debug')('app4:server');
 var http = require('http');
 
+var Chat = require('../controllers/chat.controller.js');
+var ChatController = new Chat();
+
 /**
  * Get port from environment and store in Express.
  */
@@ -36,10 +39,13 @@ io = require('socket.io').listen(server);
 io.sockets.on('connection', function(socket) {
 
     console.log('Client connected.');
-    socket.on('chat message', function(msg){
-      io.emit('chat message', msg);
+    socket.on('chat message', function(input){
+      io.emit('chat message', input);
       //socket.broadcast.emit(msg);
-      //console.log('message: ' + msg);
+      ChatController.save(input, function(result) {
+        //res.redirect('/users');
+      });
+      console.log('message: ' + input.msg);
     });
     // Disconnect listener
     socket.on('disconnect', function() {
