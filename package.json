@@ -17,5 +17,13 @@
   "license": "ISC",
   "directories": {
     "example": "example"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayrokid/nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayrokid/nodejs/issues"
+  },
+  "homepage": "https://github.com/ayrokid/nodejs#readme"
 }

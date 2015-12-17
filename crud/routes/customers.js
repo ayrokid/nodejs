@@ -6,7 +6,7 @@ var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'nodejs'  
+    database: 'nodejs'
 });
 
 exports.list = function(req, res){
