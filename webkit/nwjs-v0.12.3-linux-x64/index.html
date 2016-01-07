@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<!--______________________________________________________BEGIN APP-->
+
+<body>
+    <script>
+    </script>
+    <script>
+    var express = require('express');
+    var app = express();
+
+    var expressHbs = require('express-handlebars');
+
+    app.engine('hbs', expressHbs({
+        extname: 'hbs'
+    }));
+
+    app.set('view engine', 'hbs');
+
+
+    app.get("/", function(req, res) {
+        res.render("index", {
+            item: "weeeeeeeee"
+        })
+    })
+
+
+
+    app.listen("3000", function(err) {
+
+        if (err) {
+            console.log("server is not working");
+        } else {
+            console.log("Server is working on 3000");
+        }
+    })
+
+
+
+    window.location.href = 'http://localhost:3000';
+    </script>
+</body>
+<!--______________________________________________________END APP-->
+
+</html>
